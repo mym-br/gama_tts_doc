@@ -1,0 +1,117 @@
+
+@font-face {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 400;
+
+	/* Copied from https://www.google.com/fonts. */
+	/* Converted from TTF to WOFF. */
+	/* License available at: ./font/open_sans-LICENSE-2.0 */
+	src: url(./font/open_sans_regular.woff) format('woff');
+}
+
+body {
+	background-color: #f0f0f0;
+	margin: 0;
+	font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+	font-size: 1.4em;
+	color: black;
+}
+
+h2 {
+	font-size: 1.2em;
+	/*font-style: italic;*/
+	color: black;
+}
+
+a:link {
+	color: black;
+}
+a:visited {
+	color: black;
+}
+a:hover {
+	color: black;
+}
+a:active {
+	color: black;
+}
+
+#page {
+	max-width: 1700px;
+	margin: 0 auto auto auto;
+	background-color: white;
+	color: black;
+}
+
+.content {
+	padding: 0.5em 1.5em 1.5em 1.5em;
+	min-height: 400px;
+}
+
+#header {
+	background-color: white;
+	padding: 0 1.5em 0 1.5em;
+}
+
+#footer {
+	font-size: 0.8em;
+	background-color: #e0e0e0;
+	text-align: center;
+	padding: 0.5em;
+}
+
+.horizontal-menu {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	color: white;
+	background-color: #505050;
+}
+
+.horizontal-menu > li {
+	float: left;
+}
+
+.horizontal-menu a.menu-item:link {
+	color: white;
+	padding: 0.5em 1.5em 0.5em 1.5em;
+	display: inline-block;
+	background-color: #505050;
+}
+.horizontal-menu a.menu-item:visited {
+	color: white;
+	padding: 0.5em 1.5em 0.5em 1.5em;
+	display: inline-block;
+	background-color: #505050;
+}
+.horizontal-menu a.menu-item:hover {
+	color: white;
+	padding: 0.5em 1.5em 0.5em 1.5em;
+	display: inline-block;
+	background-color: #676767;
+}
+.horizontal-menu a.menu-item:active {
+	color: white;
+	padding: 0.5em 1.5em 0.5em 1.5em;
+	display: inline-block;
+	background-color: #505050;
+}
+
+img.screenshot {
+	display: block;
+	margin: auto;
+	max-width: 100%;
+	height: auto;
+}
+
+img.figure {
+	display: block;
+	margin: auto;
+	max-width: 100%;
+	height: auto;
+}
