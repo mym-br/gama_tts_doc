@@ -31,25 +31,25 @@
 <p>There are four modes of execution:<p>
 
 <ol>
-<li><code>gama_tts tts</code> (text-to-speech)<br>
+<li><code>gama_tts tts</code> (text-to-speech)
 <p>In this mode, the input text is converted to speech audio. First the text parser converts the text to a phonetic string.
 Then the control model converts this string to vocal tract model parameters.
 Finally, the vocal tract model converts these parameters to speech audio.
 </p>
 </li>
-<li><code>gama_tts pho0</code> (Gnuspeech phonetic format)<br>
+<li><code>gama_tts pho0</code> (Gnuspeech phonetic format)
 <p>In this mode, the control model converts the input phonetic string to vocal tract model parameters.
 Then the vocal tract model converts these parameters to speech audio.
 </p>
 <p>Note: This mode does not use a Posture rewriter.
 </p>
 </li>
-<li><code>gama_tts pho1</code> (<a href="http://tcts.fpms.ac.be/synthesis/mbrola.html">MBROLA</a> phonetic format)</h2>
+<li><code>gama_tts pho1</code> (<a href="http://tcts.fpms.ac.be/synthesis/mbrola.html">MBROLA</a> phonetic format)
 <p>This mode works like the previous one, but the input format is different.
 With this mode, an external front-end can be used, like Festival or Espeak.
 </p>
 </li>
-<li><code>gama_tts vtm</code> (vocal tract model)<br>
+<li><code>gama_tts vtm</code> (vocal tract model)
 <p>In this mode the vocal tract model converts the input parameters to speech audio.
 </p>
 </li>
@@ -59,21 +59,23 @@ With this mode, an external front-end can be used, like Festival or Espeak.
 
 <h2>Gnuspeech phonetic format</h2>
 
-<p>- Valid Posture names contain Unicode characters except:<br>
-<code>0000-0020</code><br>
-<code>007F (DEL)</code><br>
-<code>' (apostrophe)</code><br>
-<code>_ (underscore)</code><br>
-<code>*</code><br>
-<code>.</code><br>
-<code>/</code><br>
-<code>0-9</code><br>
-</p>
+<p>- Valid Posture names contain Unicode characters except:</p>
+
+<pre>
+    0000-0020
+    007F (DEL)
+    '    (apostrophe)
+    _    (underscore)
+    *
+    .
+    /
+    0-9
+</pre>
 
 <p>- Postures are separated by <code>_</code> (underscore).
 </p>
 
-<p>- Other symbols:<br>
+<p>- Other symbols:</p>
 <table>
 <tr><td><code>/0</code>     </td><td>Set current tone group type: statement        </td></tr>
 <tr><td><code>/1</code>     </td><td>Set current tone group type: exclamation      </td></tr>
@@ -91,9 +93,9 @@ With this mode, an external front-end can be used, like Festival or Espeak.
 <tr><td><code>.</code>      </td><td>New syllable                                  </td></tr>
 <tr><td><code>NN.NN</code>  </td><td>Tempo of the next posture                     </td></tr>
 </table>
-</p>
 
-<p>- Example:<br>
+<p>- Example:</p>
+<p>
 The quick black dog jumps over the lazy brown fox.<br>
 <code>/c // /0 # /w dh_uh /w /_k_w_i_k /w /_b_l_aa_k /w /_d_o_g /w /_j_a_m_p_s /w /_uh_uu.v_uh_r /w dh_uh /w /_l_e_i.z_i /w /_b_r_ah_uu_n /w /l /*f_o_k_s # // /c</code>
 </p>
@@ -111,9 +113,8 @@ Comments start with a semicolon. The intonation points are optional.
 The intonation point value is in Hz.
 <p>
 
-<p>Example:
+<p>Example:</p>
 <pre>
-<code>
 ; This is a test.
 pau 220
 dh   37   0  99
@@ -131,9 +132,7 @@ aa  165  50 131
 k   115
 s   144 100 124
 pau 220
-</code>
 </pre>
-</p>
 
 <hr>
 
@@ -256,7 +255,7 @@ text_parser/
 
 	<div id="footer">This documentation is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 <br>
-Last update: 2017-08-18
+Last update: 2017-08-19
 </div>
 
 </div>
