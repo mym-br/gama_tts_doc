@@ -23,10 +23,20 @@
 <div class="content">
 <h1>How to use GamaTTS</h1>
 
+<ol>
+<li><a href="#modes">Modes of execution</a></li>
+<li><a href="#pho0">Gnuspeech phonetic format</a></li>
+<li><a href="#pho1">MBROLA phonetic format</a></li>
+<li><a href="#data">Description of the data files (<code>data/english/vtm0</code> to <code>vtm5</code>)</a></li>
+<li><a href="#notes">Notes</a></li>
+</ol>
+
+<hr>
+<!-- ======================================================================= -->
+<h2 id="modes">Modes of execution</h2>
+
 <p>Execute <code>gama_tts --help</code> to see how to run the program.
 </p>
-
-<h2>Modes of execution</h2>
 
 <p>There are four modes of execution:<p>
 
@@ -56,8 +66,8 @@ With this mode, an external front-end can be used, like Festival or Espeak.
 </ol>
 
 <hr>
-
-<h2>Gnuspeech phonetic format</h2>
+<!-- ======================================================================= -->
+<h2 id="pho0">Gnuspeech phonetic format</h2>
 
 <p>- Valid Posture names contain Unicode characters except:</p>
 
@@ -101,8 +111,8 @@ The quick black dog jumps over the lazy brown fox.<br>
 </p>
 
 <hr>
-
-<h2>MBROLA phonetic format</h2>
+<!-- ======================================================================= -->
+<h2 id="pho1">MBROLA phonetic format</h2>
 
 <p>The phonetic string contains lines in the format:<br>
 <code>phoneme duration intonation_point_pos_1 intonation_point_value_1 intonation_point_pos_2 intonation_point_value_2...</code><br>
@@ -135,8 +145,8 @@ pau 220
 </pre>
 
 <hr>
-
-<h2>Description of the data files (<code>data/english/vtm0</code> to <code>vtm5</code>)</h2>
+<!-- ======================================================================= -->
+<h2 id="data">Description of the data files (<code>data/english/vtm0</code> to <code>vtm5</code>)</h2>
 
 <pre>
 artic.xml
@@ -251,11 +261,21 @@ text_parser/
 
 </pre>
 
+<hr>
+<!-- ======================================================================= -->
+<h2 id="notes">Notes</h2>
+
+<ul>
+<li>When setting noise parameters like breathiness or frication volume, the value indicates the amplitude of
+the noise source (the pseudo-random number generator).
+The amplitude after the filtering can be significantly lower.</li>
+</ul>
+
 </div>
 
 	<div id="footer">This documentation is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 <br>
-Last update: 2017-08-19
+Last update: 2017-09-08
 </div>
 
 </div>
