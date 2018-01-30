@@ -70,7 +70,7 @@ a:active {
 	padding: 0;
 	overflow: hidden;
 	color: white;
-	background-color: #505050;
+	background-color: black;
 }
 
 .horizontal-menu > li {
@@ -81,25 +81,25 @@ a:active {
 	color: white;
 	padding: 0.5em 1.5em 0.5em 1.5em;
 	display: inline-block;
-	background-color: #505050;
+	background-color: black;
 }
 .horizontal-menu a.menu-item:visited {
 	color: white;
 	padding: 0.5em 1.5em 0.5em 1.5em;
 	display: inline-block;
-	background-color: #505050;
+	background-color: black;
 }
 .horizontal-menu a.menu-item:hover {
 	color: white;
 	padding: 0.5em 1.5em 0.5em 1.5em;
 	display: inline-block;
-	background-color: #676767;
+	background-color: #505050;
 }
 .horizontal-menu a.menu-item:active {
 	color: white;
 	padding: 0.5em 1.5em 0.5em 1.5em;
 	display: inline-block;
-	background-color: #505050;
+	background-color: black;
 }
 
 img.screenshot {
