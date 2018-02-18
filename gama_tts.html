@@ -220,23 +220,23 @@
 			<p>Example:</p>
 
 			<pre>
-; This is a test.
-pau 220
-dh   37   0  99
-ax   44  50 111
-k   133   0 111
-w    48
-ih   52  50 131
-k    58
-b    95   0 128
-r    44
-aw  183  50 137
-n    84
-f   108   0 130
-aa  165  50 131
-k   115
-s   144 100 124
-pau 220
+    ; This is a test.
+    pau 220
+    dh   37   0  99
+    ax   44  50 111
+    k   133   0 111
+    w    48
+    ih   52  50 131
+    k    58
+    b    95   0 128
+    r    44
+    aw  183  50 137
+    n    84
+    f   108   0 130
+    aa  165  50 131
+    k   115
+    s   144 100 124
+    pau 220
 </pre>
 
 			<hr>
@@ -246,114 +246,114 @@ pau 220
 
 			<pre>
 artic.xml
- Contains the articulatory database.
+    Contains the articulatory database.
 
- It can be modified with a plain text editor, but the use of
- GamaTTS:Editor is recommended.
+    It can be modified with a plain text editor, but the use of
+    GamaTTS:Editor is recommended.
 
 interactive.config
- Configuration file for the interactive vocal tract model.
+    Configuration file for the interactive vocal tract model.
 
 voice_baby.config
 voice_female.config
 voice_large_child.config
 voice_male.config
 voice_small_child.config
- Contain the voice parameters.
+    Contain the voice parameters.
 
-  vocal_tract_length
+        vocal_tract_length
 
-  glottal_pulse_tp
-   Rise time, in % of the period.
-  glottal_pulse_tn_min
-   Fall time, in % of the period - for the highest pulse
-   amplitude.
-  glottal_pulse_tn_max
-   Fall time, in % of the period - for the lowest pulse
-   amplitude.
+        glottal_pulse_tp
+            Rise time, in % of the period.
+        glottal_pulse_tn_min
+            Fall time, in % of the period - for the highest pulse
+            amplitude.
+        glottal_pulse_tn_max
+            Fall time, in % of the period - for the lowest pulse
+            amplitude.
 
-   These parameters modify the glottal pulse shape.
+            These parameters modify the glottal pulse shape.
 
-  reference_glottal_pitch
-   Modifies the voice pitch.
+        reference_glottal_pitch
+            Modifies the voice pitch.
 
-  breathiness
+        breathiness
 
-  loss_factor
-   Defines the acoustic loss inside the vocal tract.
+        loss_factor
+            Defines the acoustic loss inside the vocal tract.
 
-  intonation_factor
-   The intonation curve is multiplied by this factor.
+        intonation_factor
+            The intonation curve is multiplied by this factor.
 
 vtm_control_model.config
- Contains the parameters for the vocal tract model controller.
+    Contains the parameters for the vocal tract model controller.
 
-  voice_name
-   Example: If voice_name = male, the voice file named
-   voice_male.config will be loaded.
-  tempo
-   Values greater than 1.0 will speed up the speech.
-  pitch_offset
-   Modifies the voice pitch.
+        voice_name
+            Example: If voice_name = male, the voice file named
+            voice_male.config will be loaded.
+        tempo
+            Values greater than 1.0 will speed up the speech.
+        pitch_offset
+            Modifies the voice pitch.
 
-  drift_deviation
-  drift_lowpass_cutoff
-   Control the random perturbations in the intonation
-   (requires intonation_drift = 1).
+        drift_deviation
+        drift_lowpass_cutoff
+            Control the random perturbations in the intonation
+            (requires intonation_drift = 1).
 
-  dictionary_1_file
-  dictionary_2_file
-  dictionary_3_file
-   Indicate the dictionaries (the dictionaries will be
-   searched in the order 1, 2, 3).
+        dictionary_1_file
+        dictionary_2_file
+        dictionary_3_file
+            Indicate the dictionaries (the dictionaries will be
+            searched in the order 1, 2, 3).
 
 vtm.config
- Contains the parameters for the vocal tract model.
+    Contains the parameters for the vocal tract model.
 
-  model
-   The vocal tract model type.
-  vocal_tract_length_offset
-   This value is added to the vocal tract length.
+        model
+            The vocal tract model type.
+        vocal_tract_length_offset
+            This value is added to the vocal tract length.
 
 intonation_rhythm/
- intonation.config
-  Contains constants for the intonation.
- rhythm.config
-  Contains constants for the rhythm calculation.
- tone_group_param-continuation.txt
- tone_group_param-exclamation.txt
- tone_group_param-question.txt
- tone_group_param-semicolon.txt
- tone_group_param-statement.txt
-  Intonation parameters for each tone group.
-  If random_intonation = 0 in vtm_control_model.config, only the
-  first line in each file will be used. If random_intonation = 1,
-  the line will be randomly selected.
+    intonation.config
+        Contains constants for the intonation.
+    rhythm.config
+        Contains constants for the rhythm calculation.
+    tone_group_param-continuation.txt
+    tone_group_param-exclamation.txt
+    tone_group_param-question.txt
+    tone_group_param-semicolon.txt
+    tone_group_param-statement.txt
+        Intonation parameters for each tone group.
+        If random_intonation = 0 in vtm_control_model.config, only the
+        first line in each file will be used. If random_intonation = 1,
+        the line will be randomly selected.
 
 pho1_parser/
- Configuration for the phonetic string parser (MBROLA format).
+    Configuration for the phonetic string parser (MBROLA format).
 
-  phoneme_map-*.txt
-   Contains the mapping between the input phonemes and the
-   internal phonemes (Postures).
+        phoneme_map-*.txt
+            Contains the mapping between the input phonemes and the
+            internal phonemes (Postures).
 
 phonetic_string_parser/
- Configuration for the phonetic string parser (Gnuspeech format).
+    Configuration for the phonetic string parser (Gnuspeech format).
 
-  rewrite.txt
-   Contains rules that may modify the phonetic string.
+        rewrite.txt
+            Contains rules that may modify the phonetic string.
 
 text_parser/
- Configuration for the text to phonetic string converter.
+    Configuration for the text to phonetic string converter.
 
-  abbreviations_with_number.txt
-  abbreviations.txt
-  main_dictionary.txt
-   The main dictionary, which relates words to postures.
-  special_acronyms.txt
-  suffix_list.txt
-  text_parser.config
-   Configuration for the text parser.
+        abbreviations_with_number.txt
+        abbreviations.txt
+        main_dictionary.txt
+            The main dictionary, which relates words to postures.
+        special_acronyms.txt
+        suffix_list.txt
+        text_parser.config
+            Configuration for the text parser.
 
 </pre>
 
