@@ -14,85 +14,64 @@
 				<li>
 					<a class="menu-item" href="index.html">Index</a>
 				</li>
-
 				<li>
 					<a class="menu-item" href="how_to_use.html">How to use</a>
 				</li>
-
 				<li>
 					<a class="menu-item" href="contact.html">Contact</a>
 				</li>
 			</ul>
 		</nav>
-
 		<div class="content">
 			<h1>How to use GamaTTS</h1>
-
 			<ol>
 				<li>
 					<a href="#modes">Modes of execution</a>
 				</li>
-
 				<li>
 					<a href="#pho0">Gnuspeech phonetic format</a>
 				</li>
-
 				<li>
 					<a href="#pho1">MBROLA phonetic format</a>
 				</li>
-
 				<li>
 					<a href="#data">Description of the data files (<code>data/english/vtm0</code> to <code>vtm5</code>)</a>
 				</li>
-
 				<li>
 					<a href="#notes">Notes</a>
 				</li>
 			</ol>
-
 			<hr>
 			<!-- ======================================================================= -->
-
 			<h2 id="modes">Modes of execution</h2>
-
 			<p>Execute <code>gama_tts --help</code> to see how to run the program.</p>
-
 			<p>There are four modes of execution:</p>
-
 			<ol>
 				<li>
 					<code>gama_tts tts</code> (text-to-speech)
 					<p>In this mode, the input text is converted to speech audio. First the text parser converts the text to a phonetic string. Then the control model
 					converts this string to vocal tract model parameters. Finally, the vocal tract model converts these parameters to speech audio.</p>
 				</li>
-
 				<li>
 					<code>gama_tts pho0</code> (Gnuspeech phonetic format)
 					<p>In this mode, the control model converts the input phonetic string to vocal tract model parameters. Then the vocal tract model converts these
 					parameters to speech audio.</p>
-
 					<p>Note: This mode does not use a Posture rewriter.</p>
 				</li>
-
 				<li>
 					<code>gama_tts pho1</code> (<a href="http://tcts.fpms.ac.be/synthesis/mbrola.html">MBROLA</a> phonetic format)
 					<p>This mode works like the previous one, but the input format is different. With this mode, an external front-end can be used, like Festival or
 					Espeak.</p>
 				</li>
-
 				<li>
 					<code>gama_tts vtm</code> (vocal tract model)
 					<p>In this mode the vocal tract model converts the input parameters to speech audio.</p>
 				</li>
 			</ol>
-
 			<hr>
 			<!-- ======================================================================= -->
-
 			<h2 id="pho0">Gnuspeech phonetic format</h2>
-
 			<p>- Valid Posture names contain Unicode characters except:</p>
-
 			<pre>
     0000-0020
     007F (DEL)
@@ -104,121 +83,82 @@
     0-9
 </pre>
 			<p>- Postures are separated by <code>_</code> (underscore).</p>
-
 			<p>- Other symbols:</p>
-
 			<table>
 				<tr>
-					<td><code>/0</code>
-					</td>
+					<td><code>/0</code></td>
 					<td>Set current tone group type: statement</td>
 				</tr>
-
 				<tr>
-					<td><code>/1</code>
-					</td>
+					<td><code>/1</code></td>
 					<td>Set current tone group type: exclamation</td>
 				</tr>
-
 				<tr>
-					<td><code>/2</code>
-					</td>
+					<td><code>/2</code></td>
 					<td>Set current tone group type: question</td>
 				</tr>
-
 				<tr>
-					<td><code>/3</code>
-					</td>
+					<td><code>/3</code></td>
 					<td>Set current tone group type: continuation</td>
 				</tr>
-
 				<tr>
-					<td><code>/4</code>
-					</td>
+					<td><code>/4</code></td>
 					<td>Set current tone group type: semicolon</td>
 				</tr>
-
 				<tr>
-					<td><code>/_</code>
-					</td>
+					<td><code>/_</code></td>
 					<td>New foot</td>
 				</tr>
-
 				<tr>
-					<td><code>/*</code>
-					</td>
+					<td><code>/*</code></td>
 					<td>New marked foot</td>
 				</tr>
-
 				<tr>
-					<td><code>//</code>
-					</td>
+					<td><code>//</code></td>
 					<td>New tone group</td>
 				</tr>
-
 				<tr>
-					<td><code>/c</code>
-					</td>
+					<td><code>/c</code></td>
 					<td>New chunk</td>
 				</tr>
-
 				<tr>
-					<td><code>/l</code>
-					</td>
+					<td><code>/l</code></td>
 					<td>Last foot in tone group marker</td>
 				</tr>
-
 				<tr>
-					<td><code>/w</code>
-					</td>
+					<td><code>/w</code></td>
 					<td>New word</td>
 				</tr>
-
 				<tr>
-					<td><code>/fNN.NN</code>
-					</td>
+					<td><code>/fNN.NN</code></td>
 					<td>Foot tempo</td>
 				</tr>
-
 				<tr>
-					<td><code>/rNN.NN</code>
-					</td>
+					<td><code>/rNN.NN</code></td>
 					<td>Rule tempo</td>
 				</tr>
-
 				<tr>
-					<td><code>.</code>
-					</td>
+					<td><code>.</code></td>
 					<td>New syllable</td>
 				</tr>
-
 				<tr>
-					<td><code>NN.NN</code>
-					</td>
+					<td><code>NN.NN</code></td>
 					<td>Tempo of the next posture</td>
 				</tr>
 			</table>
-
 			<p>- Example:</p>
-
 			<p>The quick black dog jumps over the lazy brown fox.<br>
 			<code>/c // /0 # /w dh_uh /w /_k_w_i_k /w /_b_l_aa_k /w /_d_o_g /w /_j_a_m_p_s /w /_uh_uu.v_uh_r /w dh_uh /w /_l_e_i.z_i /w /_b_r_ah_uu_n /w /l /*f_o_k_s #
 			// /c</code></p>
-
 			<hr>
 			<!-- ======================================================================= -->
-
 			<h2 id="pho1">MBROLA phonetic format</h2>
-
 			<p>The phonetic string contains lines in the format:<br>
 			<code>phoneme duration intonation_point_pos_1 intonation_point_value_1 intonation_point_pos_2 intonation_point_value_2...</code><br>
 			Comments start with a semicolon. The intonation points are optional.</p>
-
 			<p>The duration is in milliseconds. The intonation point position is defined as the percentage of the time between phonemes. The intonation point value is
 			in Hz.</p>
-
 			<p>Example:</p>
-
 			<pre>
     ; This is a test.
     pau 220
@@ -238,12 +178,9 @@
     s   144 100 124
     pau 220
 </pre>
-
 			<hr>
 			<!-- ======================================================================= -->
-
 			<h2 id="data">Description of the data files (<code>data/english/vtm0</code> to <code>vtm5</code>)</h2>
-
 			<pre>
 artic.xml
     Contains the articulatory database.
@@ -356,18 +293,14 @@ text_parser/
             Configuration for the text parser.
 
 </pre>
-
 			<hr>
 			<!-- ======================================================================= -->
-
 			<h2 id="notes">Notes</h2>
-
 			<ul>
 				<li>When setting noise parameters like breathiness or frication volume, the value indicates the amplitude of the noise source (the pseudo-random number
 				generator). The amplitude after the filtering can be significantly lower.</li>
 			</ul>
 		</div>
-
 		<div id="footer">
 			This documentation is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0
 			International License</a>.<br>
