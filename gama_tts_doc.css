@@ -104,3 +104,13 @@ img.figure {
 	max-width: 100%;
 	height: auto;
 }
+
+pre code {
+	display: block;
+	box-sizing: border-box;
+	border-style: solid;
+	border-width: thin;
+	border-color: #d0d0d0;
+	background-color: #f8f8f8;
+	padding: 1.0em;
+}

@@ -47,24 +47,25 @@
 			<p>Execute <code>gama_tts --help</code> to see how to run the program.</p>
 			<p>There are four modes of execution:</p>
 			<ol>
-				<li>
-					<code>gama_tts tts</code> (text-to-speech)
+				<li>Text-to-speech<br>
+					<pre><code>gama_tts tts</code></pre>
 					<p>In this mode, the input text is converted to speech audio. First the text parser converts the text to a phonetic string. Then the control model
 					converts this string to vocal tract model parameters. Finally, the vocal tract model converts these parameters to speech audio.</p>
 				</li>
-				<li>
-					<code>gama_tts pho0</code> (Gnuspeech phonetic format)
+				<li>Gnuspeech phonetic format<br>
+					<pre><code>gama_tts pho0</code></pre>
 					<p>In this mode, the control model converts the input phonetic string to vocal tract model parameters. Then the vocal tract model converts these
 					parameters to speech audio.</p>
 					<p>Note: This mode does not use a Posture rewriter.</p>
 				</li>
 				<li>
-					<code>gama_tts pho1</code> (<a href="http://tcts.fpms.ac.be/synthesis/mbrola.html">MBROLA</a> phonetic format)
+					<a href="https://github.com/numediart/MBROLA">MBROLA</a> phonetic format<br>
+					<pre><code>gama_tts pho1</code></pre>
 					<p>This mode works like the previous one, but the input format is different. With this mode, an external front-end can be used, like Festival or
 					Espeak.</p>
 				</li>
-				<li>
-					<code>gama_tts vtm</code> (vocal tract model)
+				<li>Vocal tract model<br>
+					<pre><code>gama_tts vtm</code></pre>
 					<p>In this mode the vocal tract model converts the input parameters to speech audio.</p>
 				</li>
 			</ol>
@@ -304,7 +305,7 @@ text_parser/
 		<div id="footer">
 			This documentation is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0
 			International License</a>.<br>
-			Last update: 2018-02-18
+			Last update: 2019-12-23
 		</div>
 	</div>
 </body>
