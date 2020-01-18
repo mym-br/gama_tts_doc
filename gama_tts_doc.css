@@ -119,6 +119,10 @@ img.figure {
 	height: auto;
 }
 
+code {
+	background-color: #e2edff;
+}
+
 pre code {
 	display: block;
 	box-sizing: border-box;
