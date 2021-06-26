@@ -25,15 +25,25 @@
 		<div class="content">
 			<h1>Introduction</h1>
 			<h2>History</h2>
-			<p>GamaTTS is an <strong>experimental</strong> articulatory speech synthesizer. It started as a C++ port of <a href=
+			<p>GamaTTS is an <strong>experimental</strong> articulatory speech synthesizer, started as a C++ port of <a href=
 			"https://www.gnu.org/software/gnuspeech/">Gnuspeech</a>. The port is based on the original TTS_Server developed for NeXTSTEP, written in C (70% in lines of
 			code) and ObjC (30%).</p>
 			<p>GamaTTS:Editor was later developed to edit the articulatory database, using parts of the source code from Monet (written in ObjC), an editor in
-			Gnuspeech. During the development of the editor, the available documentation for Monet was used as a reference.</p>
-			<p><b>Since GamaTTS is based on Gnuspeech, the credit (for the things that work) goes to Gnuspeech</b>.</p>
-			<p>GamaTTS is not compatible with Gnuspeech, even though currently the changes are minimal.</p>
+			Gnuspeech. During the development of GamaTTS:Editor, the available documentation for Monet was used as a reference.</p>
+			<p>Some of the changes introduced during the development of GamaTTS are:</p>
+			<ul>
+				<li>Support for multiple vocal tract model plugins.</li>
+				<li>The vocal tract parameters are arbitrary (except the first which must be the pitch).</li>
+				<li>Support for external front-ends, using the MBROLA input file format.</li>
+				<li>Partial support for Unicode text.</li>
+				<li>Some hard-coded values have been moved to configuration files.</li>
+				<li>Real-time manipulation of vocal tract parameters during speech synthesis.</li>
+			</ul>
+			<p>Due to these changes, most of the file formats are not compatible with Gnuspeech anymore. But the vocal tract models vtm0, vtm1 and vtm2 produce speech
+			almost equivalent to Gnuspeech.</p>
 			<p>Notes:</p>
 			<ul>
+				<li><b>Since GamaTTS is based on Gnuspeech, the credit (for the things that work) goes to Gnuspeech</b>.</li>
 				<li>"Gama" is the portuguese for gamma.</li>
 				<li>The <a href="http://pages.cpsc.ucalgary.ca/~hill/gnuspeech/gnuspeech-index.htm">documentation for Gnuspeech</a> is very relevant and interesting.
 				</li>
@@ -54,10 +64,10 @@
 			<p>The VTM parameters can be adjusted to produce a "schwa" sound, for example. If the parameter values remain constant, the output will be a continuous
 			sound. In the Control Model, such a configuration of the VTM is called a <b>Posture</b>.</p>
 			<p>To produce speech, the VTM parameters must change along the time (this is called articulation). In the Control Model, the way the parameters change from
-			Posture to Posture is defined by <b>Transitions</b>.</p>
-			<p><b>Transitions</b> use <b>Transition Points</b> to define the curve that will control the VTM parameter along the time. The time of each <b>Point</b> can
-			be defined using constants, but this is not very flexible. For this reason the Control Model uses <b>Equations</b> to define the times. The <b>Equations</b>
-			use formulas to calculate time, using as parameters the durations of the <b>Postures</b> involved in a <b>Transition</b>.</p>
+			<b>Posture</b> to <b>Posture</b> is defined by <b>Transitions</b>.</p>
+			<p><b>Transitions</b> use <b>Transition Points</b> to define the piecewise linear function that will control the VTM parameter along the time. The time of
+			each <b>Point</b> can be defined using constants, but this is not very flexible. For this reason the Control Model uses <b>Equations</b> to define the
+			times. The <b>Equations</b> use formulas to calculate time, using as parameters the durations of the <b>Postures</b> involved in a <b>Transition</b>.</p>
 			<p>The Control Model must decide which <b>Transition</b> will be used for each <b>Posture</b> sequence and for each parameter. The <b>Rules</b> are used to
 			do this selection, they contain boolean expressions to match a sequence of <b>Postures</b>. Boolean expressions can also match <b>Categories</b>, which are
 			groups of <b>Postures</b>.</p>
@@ -65,7 +75,7 @@
 		<div id="footer">
 			This documentation is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0
 			International License</a>.<br>
-			Last update: 2019-12-23
+			Last update: 2021-06-26
 		</div>
 	</div>
 </body>

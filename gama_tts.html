@@ -45,27 +45,23 @@
 			<!-- ======================================================================= -->
 			<h2 id="modes">Modes of execution</h2>
 			<p>Execute <code>gama_tts --help</code> to see how to run the program.</p>
-			<p>There are four modes of execution:</p>
+			<p>There are three modes of execution:</p>
 			<ol>
 				<li>Text-to-speech<br>
-					<pre><code>gama_tts tts</code></pre>
+					<pre><code>gama_tts tts ...</code></pre>
 					<p>In this mode, the input text is converted to speech audio. First the text parser converts the text to a phonetic string. Then the control model
 					converts this string to vocal tract model parameters. Finally, the vocal tract model converts these parameters to speech audio.</p>
 				</li>
-				<li>Gnuspeech phonetic format<br>
-					<pre><code>gama_tts pho0</code></pre>
+				<li>Synthesis from phonetic string<br>
+					<pre><code>gama_tts pho ...</code></pre>
 					<p>In this mode, the control model converts the input phonetic string to vocal tract model parameters. Then the vocal tract model converts these
 					parameters to speech audio.</p>
+					<p>The input format is selected in the file <code>vtm_control_model.config</code>, field <code>phonetic_string_format</code>. The available choices are
+					<strong>gnuspeech</strong> and <strong>mbrola</strong>.</p>
 					<p>Note: This mode does not use a Posture rewriter.</p>
 				</li>
-				<li>
-					<a href="https://github.com/numediart/MBROLA">MBROLA</a> phonetic format<br>
-					<pre><code>gama_tts pho1</code></pre>
-					<p>This mode works like the previous one, but the input format is different. With this mode, an external front-end can be used, like Festival or
-					Espeak.</p>
-				</li>
-				<li>Vocal tract model<br>
-					<pre><code>gama_tts vtm</code></pre>
+				<li>Synthesis from vocal tract model parameters<br>
+					<pre><code>gama_tts vtm ...</code></pre>
 					<p>In this mode the vocal tract model converts the input parameters to speech audio.</p>
 				</li>
 			</ol>
@@ -182,6 +178,7 @@
 			<hr>
 			<!-- ======================================================================= -->
 			<h2 id="data">Description of the data files (<code>data/english/vtm0</code> to <code>vtm5</code>)</h2>
+			<p>Note: Only some parameters are shown here.</p>
 			<pre>
 artic.xml
     Contains the articulatory database.
@@ -239,17 +236,14 @@ vtm_control_model.config
             Control the random perturbations in the intonation
             (requires intonation_drift = 1).
 
-        dictionary_1_file
-        dictionary_2_file
-        dictionary_3_file
-            Indicate the dictionaries (the dictionaries will be
-            searched in the order 1, 2, 3).
+        phonetic_string_format
+            <strong>gnuspeech</strong> or <strong>mbrola</strong>.
 
 vtm.config
     Contains the parameters for the vocal tract model.
 
-        model
-            The vocal tract model type.
+        dll_path
+            The dynamic link library of the vocal tract model plugin.
         vocal_tract_length_offset
             This value is added to the vocal tract length.
 
@@ -271,6 +265,8 @@ intonation_rhythm/
 pho1_parser/
     Configuration for the phonetic string parser (MBROLA format).
 
+        pho1.config
+            Main configuration file.
         phoneme_map-*.txt
             Contains the mapping between the input phonemes and the
             internal phonemes (Postures).
@@ -286,12 +282,22 @@ text_parser/
 
         abbreviations_with_number.txt
         abbreviations.txt
+        external_text_parser.config
+            Configuration for an external text parser, used when the MBROLA
+            phonetic string format is selected.
         main_dictionary.txt
             The main dictionary, which relates words to postures.
         special_acronyms.txt
         suffix_list.txt
         text_parser.config
-            Configuration for the text parser.
+            Configuration for the text parser, used when the Gnuspeech phonetic
+            string format is selected.
+
+                dictionary_1_file
+                dictionary_2_file
+                dictionary_3_file
+                    Indicate the dictionaries (the dictionaries will be
+                    searched in the order 1, 2, 3).
 
 </pre>
 			<hr>
@@ -305,7 +311,7 @@ text_parser/
 		<div id="footer">
 			This documentation is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0
 			International License</a>.<br>
-			Last update: 2019-12-23
+			Last update: 2021-06-26
 		</div>
 	</div>
 </body>
